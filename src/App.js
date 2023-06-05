@@ -1,9 +1,12 @@
 import React from 'react';
 import './App.css';
-
+import CartIten from './CartItem';
 function App() {
   return (
-    <h1> cart </h1>
+    <div className="App">
+      <CartIten/>
+    </div>
+    
   );
 }
 
