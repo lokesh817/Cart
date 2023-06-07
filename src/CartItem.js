@@ -10,9 +10,21 @@ class CartItem extends React.Component{
         }
         
     }
+    // arrow function itself bind do bind this menthod this keyword 
     increaseQty = ()=>{
-        // console.log("Current QUantity:",this.state.qty);
-        this.state.qty=this.state.qty+1;
+        this.setState((prevState)=>{
+            return { qty : prevState.qty + 1};
+        });
+    }
+    decreaseQty = ()=>{
+        this.setState((prevState)=>{
+            if(prevState.qty>0){
+                return { qty : prevState.qty - 1};
+            }
+        })
+    }
+    deleteComponent =()=>{
+        //functionality is to be implemented
     }
     render(){
         const { price, title, qty } = this.state;
@@ -33,8 +45,18 @@ class CartItem extends React.Component{
                             src="https://cdn-icons-png.flaticon.com/128/3303/3303893.png"
                             onClick={this.increaseQty}    
                         />
-                        <img alt="decrease" className="action-icons" src="https://cdn-icons-png.flaticon.com/128/1828/1828906.png" />
-                        <img alt="delete" className="action-icons" src="https://cdn-icons-png.flaticon.com/128/484/484611.png" />
+                        <img 
+                            alt="decrease"
+                            className="action-icons"
+                            src="https://cdn-icons-png.flaticon.com/128/1828/1828906.png" 
+                            onClick={this.decreaseQty}
+                        />
+                        <img 
+                            alt="delete" 
+                            className="action-icons"
+                            src="https://cdn-icons-png.flaticon.com/128/484/484611.png" 
+                            onClick={this.deleteComponent}
+                        />
                     </div>
                 </div>
             </div>

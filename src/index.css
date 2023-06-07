@@ -13,8 +13,8 @@ body {
 .cart-item .right-block{
   padding: 0 20px;
 }
-.cart-item .actions{
-  margin-top: 20px;
+.cart-item-actions{
+  margin-top: 10px;
 }
 .action-icons{
   height: 25px;
@@ -23,4 +23,8 @@ body {
 }
 .action-icons:hover{
   cursor: pointer;
+}
+.cart{
+  display: flex;
+  flex-direction: column;
 }
